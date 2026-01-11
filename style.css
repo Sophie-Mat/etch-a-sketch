@@ -1,0 +1,20 @@
+:root {
+    --grid-size: 16;
+}
+
+
+#container {
+    display: flex;
+    flex-wrap: wrap;
+    width: 500px;
+    height: 500px;
+}
+
+
+.square_div {
+    border: 1px solid grey;
+    box-sizing: border-box; /* Include border in size calculations */
+    flex: 1;
+    min-width: calc(100% / var(--grid-size)); /* Adjust width based on grid size */
+    min-height: calc(100% / var(--grid-size)); /* Adjust height based on grid size */
+}
