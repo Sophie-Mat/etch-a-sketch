@@ -1,20 +1,36 @@
 :root {
-    --grid-size: 16;
+    --grid-size: 16; /* default - can be overridden by js */
+    --game-size: 500px;
 }
 
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    font-family: Arial, sans-serif;
+    margin-top: 50px;
+}
 
-#container {
+#menu{
+    display: flex;
+    width: var(--game-size);
+    align-items: center;
+    justify-content: space-between;
+}
+
+#gridContainer {
     display: flex;
     flex-wrap: wrap;
-    width: 500px;
-    height: 500px;
+    width: var(--game-size);
+    height: var(--game-size);
+    border: 1px solid grey;
+    box-sizing: border-box;
 }
 
 
 .square_div {
-    border: 1px solid grey;
-    box-sizing: border-box; /* Include border in size calculations */
     flex: 1;
-    min-width: calc(100% / var(--grid-size)); /* Adjust width based on grid size */
-    min-height: calc(100% / var(--grid-size)); /* Adjust height based on grid size */
+    min-width: calc(100% / var(--grid-size));
+    min-height: calc(100% / var(--grid-size));
 }
