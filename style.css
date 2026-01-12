@@ -17,6 +17,11 @@ body {
     width: var(--game-size);
     align-items: center;
     justify-content: space-between;
+    gap: 30px;
+}
+
+h3{
+    flex: none;
 }
 
 #gridContainer {
