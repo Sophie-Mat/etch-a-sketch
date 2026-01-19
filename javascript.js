@@ -1,6 +1,6 @@
 const gridContainer = document.querySelector("#gridContainer");
 
-const OPACITY_INCREMENT = 0.1;
+const OPACITY_INCREMENT = 0.1; // for brush tool
 const MAX_GRID_SIZE = 100;
 const DEFAULT_COLOR = "black";
 const ERASER_COLOR = "white";
@@ -18,12 +18,12 @@ function createBox(){
     gridContainer.appendChild(box);
     
     box.addEventListener("mouseover", () => {
-        handleBoxHover(box);
+        handleBoxColoring(box);
         colorize(box);
     });
 }
 
-function handleBoxHover(box) {
+function handleBoxColoring(box) {
     if (selectedTool === "brush") {
         box.opacity += OPACITY_INCREMENT;
     } else if (selectedTool === "eraser") {
@@ -34,9 +34,21 @@ function handleBoxHover(box) {
 function colorize(box){
     if (selectedTool === "brush") {
         box.style.backgroundColor = `rgba(0, 0, 0, ${box.opacity})`;
+    } else if (selectedTool === "colorful") {
+        boxColor = getRandomColor();
+        box.style.backgroundColor = boxColor;
     } else {
         box.style.backgroundColor = boxColor;
     }
+}
+
+function getRandomColor() {
+  let letters = '0123456789ABCDEF';
+  let color = '#';
+  for (let i = 0; i < 6; i++) {
+    color += letters[Math.floor(Math.random() * 16)];
+  }
+  return color;
 }
 
 function createGrid(){
@@ -57,6 +69,7 @@ function selectTool(tool, color) {
 document.querySelector("#pen").addEventListener("click", () => selectTool("pen", DEFAULT_COLOR));
 document.querySelector("#brush").addEventListener("click", () => selectTool("brush", DEFAULT_COLOR));
 document.querySelector("#eraser").addEventListener("click", () => selectTool("eraser", ERASER_COLOR));
+document.querySelector("#colorful").addEventListener("click", () => selectTool("colorful", null));
 
 document.querySelector("#clear").addEventListener("click", clear);
 

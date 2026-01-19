@@ -7,21 +7,53 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
-    font-family: Arial, sans-serif;
+    gap: 40px;
+    font-family: cursive;
     margin-top: 50px;
+    background-color: #f0f0f0;
 }
 
-#menu{
+#mainContainer{
     display: flex;
+    flex-direction: column;
     width: var(--game-size);
     align-items: center;
     justify-content: space-between;
-    gap: 30px;
+    gap: 40px;
 }
 
 h3{
     flex: none;
+    font-family: cursive;
+    font-size: 40px;
+    font-style: italic;
+    color: #4CAF50;
+    text-shadow: 1px 1px 2px rgb(24, 69, 0);
+    margin: 5;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background: #4CAF50;
+	border-radius:28px;
+    color: white;
+	border: none;
+    box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+#buttons {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+#drawingTools, #gridSettings {
+    display: flex;
+    gap: 10px;
 }
 
 #gridContainer {
@@ -31,6 +63,8 @@ h3{
     height: var(--game-size);
     border: 1px solid grey;
     box-sizing: border-box;
+    background-color: white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
 }
 
 
