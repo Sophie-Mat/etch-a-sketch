@@ -35,10 +35,34 @@ The Odin Project assignment required implementing the following features:
 - **Random RGB Colors**: Randomize squares' RGB values with each interaction
 - **Progressive Darkening**: Each interaction darkens the square by 10% until fully black (10 interactions)
 
+## 🎨 Drawing Tools
+
+This application includes four drawing modes:
+
+### ⚫ Pen
+Classic solid black color drawing. Each square drawn over fills with black color immediately.
+
+### 🖌 Brush
+Progressive opacity effect. Hover over the same square multiple times to gradually build up darker shades. (black is the default color)
+
+### 🌈 Colorful
+Random color generator. Each square you draw over fills with a random RGB color.
+
+### ✨ Eraser
+Clear the canvas locally. Draw over squares to erase them back to white, allowing for corrections.
+
 ## 🌟 Extra Features Implemented
 
-Beyond the core requirements, I added several enhancements:
-
-- **Clear Button**: Added a dedicated clear button for easy canvas reset (not required by assignment)
-- **CSS Custom Properties**: Used CSS variables for dynamic grid sizing (modern approach)
+- **Multiple Drawing Tools**: Four distinct drawing modes (Pen, Brush, Colorful, Eraser) for varied artistic expression
+- **Brush Tool with Opacity**: Progressive darkening effect built into the brush tool for natural-looking strokes
+- **Clear Button**: Dedicated button for resetting the entire canvas
+- **Organized UI**: Tool buttons grouped into drawing tools and grid settings for intuitive layout
+- **CSS Custom Properties**: Used CSS variables for dynamic grid sizing
 - **Error Handling**: Comprehensive validation for edge cases and invalid inputs
+
+## 🚀 How to Use
+
+1. **Select a Drawing Tool**: Click one of the four tool buttons at the top (Pen, Brush, Colorful, or Eraser)
+2. **Draw**: Move your mouse over the grid squares to draw
+3. **Adjust Grid**: Click "Change Grid Size" to enter a new grid resolution (up to 100x100)
+4. **Clear Canvas**: Click "Clear" to reset and start over
